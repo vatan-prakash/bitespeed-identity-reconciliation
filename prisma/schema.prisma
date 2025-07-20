@@ -1,0 +1,26 @@
+//  Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" // we can change this to postgresql or mysql
+  url      = env("DATABASE_URL")
+}
+
+
+
+model Contact {
+  id            Int            @id @default(autoincrement())
+  phoneNumber   String?                                          //optional phone number (can be null)
+  email         String?                                           //optional email(can be null)
+  linkedId      Int?           @map("linkedId")                    // ID of another contact linked to this one(If this contact is secondary this points to its primary ID)
+  linkPrecedence String @map("linkPrecedence")  // "primary" or "secondary"
+  createdAt     DateTime       @default(now())   //when record creates it that date time
+  updatedAt     DateTime       @updatedAt    //automatically updates when the record changes
+  deletedAt     DateTime?
+
+  @@map("contacts") // Map model to 'contacts' table
+}

@@ -1,0 +1,28 @@
+{
+  "name": "bitespeed-identity-reconciliation",
+  "version": "1.0.0",
+  "description": "Bitespeed Backend Task: Identity Reconciliation for FluxKart.com",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "ts-node src/app.ts",
+    "build": "tsc",
+    "postinstall": "prisma generate",
+    "db:migrate": "node_modules\\.bin\\dotenv.cmd prisma migrate dev"
+  },
+  "keywords": ["bitespeed", "identity", "reconciliation", "backend", "typescript", "prisma", "express"],
+  "author": "Your Name Here",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.9",
+    "dotenv-cli": "^7.4.2",
+    "prisma": "^5.16.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.16.2",
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,27 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Database files
+*.db # Matches dev.db, test.db etc.
+*.sqlite
+*.sqlite3
+prisma/*.db # If you had dev.db inside the prisma folder
+
+# Compiled TypeScript files
+dist/ # The folder where tsc outputs JavaScript
+*.js.map # Source maps
+
+# IDE and OS generated files
+.vscode/ # VS Code specific settings (you might want to share some, but ignore user-specific ones)
+.idea/ # IntelliJ / WebStorm IDE files
+.DS_Store # macOS generated files
+Thumbs.db # Windows generated files
